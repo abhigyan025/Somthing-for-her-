@@ -41,7 +41,8 @@ const pages = {
     text: "LIAR 😤",
     buttons: [
       { text: "Try again", next: "q4" }
-    ]
+    ],
+    class: "liar"
   },
   q5: {
     text: "You already know the story and I just can't write it here 😭… so will you be my Valentine 👉🏻👈🏻",
@@ -63,6 +64,7 @@ function renderPage(pageKey) {
 
   const textDiv = document.createElement('div');
   textDiv.classList.add('glass');
+  if(page.class) textDiv.classList.add(page.class);
   textDiv.innerText = page.text;
   app.appendChild(textDiv);
 
